@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog_top"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_global_broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="录音"
+        android:textColor="#333"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_recording"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_global_broadcast"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="请您开始录音"
+        android:textColor="#333"
+        android:textSize="15sp" />
+
+    <com.example.rivenlee.recorddialog.view.WaveView
+        android:id="@+id/wave_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/tv_global_broadcast"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="34dp"
+        android:visibility="gone"
+        app:baselineColor="#0000"
+        app:space="10dp"
+        app:waveColor="#d0021b"
+        app:waveStokeWidth="4dp" />
+
+    <www.linwg.org.lib.LCardView
+        android:id="@+id/card_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_global_broadcast"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="34dp"
+        android:descendantFocusability="blocksDescendants"
+        app:cornerRadius="6dp"
+        app:elevation="6dp"
+        app:elevationAffectShadowSize="true"
+        app:shadowColor="#000"
+        app:shadowFluidShape="linear"
+        app:shadowStartAlpha="20"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp">
+
+            <ImageView
+                android:id="@+id/img_volic"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/volic" />
+
+            <TextView
+                android:id="@+id/tv_divider"
+                android:layout_width="1dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/img_volic"
+                android:background="#ededed" />
+
+            <TextView
+                android:id="@+id/tv_card_record_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_divider"
+                android:textColor="#d0021b"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="您的录音已经发送成功！" />
+
+            <TextView
+                android:id="@+id/tv_card_record_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_card_record_status"
+                android:layout_below="@id/tv_card_record_status"
+                android:layout_marginTop="8dp"
+                android:textColor="#7b7b7b"
+                android:textSize="14sp"
+                tools:text="时长32分21秒" />
+
+            <TextView
+                android:id="@+id/tv_card_record_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_card_record_duration"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:textColor="#7b7b7b"
+                android:textSize="14sp"
+                tools:text="2018-07-17" />
+
+        </RelativeLayout>
+
+    </www.linwg.org.lib.LCardView>
+
+    <TextView
+        android:id="@+id/tv_record_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_global_broadcast"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="132dp"
+        android:text="00:00:00"
+        android:textColor="#333"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_start_recording"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_record_time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/shape_red_24px"
+        android:paddingBottom="11dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp"
+        android:paddingTop="11dp"
+        android:text="＋ 长按录音"
+        android:textColor="#FFF"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_record_time"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="26dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/cancle" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="取消广播"
+            android:textColor="#9b9b9b"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_record_time"
+        android:layout_marginBottom="18dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="26dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/send" />
+
+        <TextView
+            android:id="@+id/tv_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="发送广播"
+            android:textColor="#9b9b9b"
+            android:textSize="12sp" />
+    </LinearLayout>
+</RelativeLayout>
