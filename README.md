@@ -3,4 +3,4 @@
 
 并附带了波形音频效果，如与你们的设计图效果不符合，可简单操作更改到自己满意的UI效果。
 ### 效果图
-![record_gif](https://github.com/rivenlee0/record-dialog/tree/master/gif/record_gif.gif)
+![record_gif](https://github.com/rivenlee0/record-dialog/blob/master/gif/record_gif.gif)
